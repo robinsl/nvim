@@ -57,4 +57,20 @@ return {
 			-- Your LSP settings here
 		end,
 	},
+	{
+		"mfussenegger/nvim-dap",
+	},
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		config = function()
+			require("mason-nvim-dap").setup({
+				ensure_installed = { "delve" },
+				handlers = {
+					function(config)
+						require("mason-nvim-dap").default_setup(config)
+					end,
+				},
+			})
+		end,
+	},
 }
