@@ -1,1 +1,2 @@
 require('configs')
+a = "bob"
